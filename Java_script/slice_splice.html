@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Script</title>
+</head>
+<body>
+    <script>
+        var array=["Jaydeep","Vivek","Rutvik","Bhadresh"];
+        for(var a=0;a<4;a++){
+            document.write(array[a] + " ");
+        }
+        document.write("<br>");
+        var d=array.slice(1,3);
+        document.write(d);
+
+        // Splice concept
+
+        document.write("<br>");
+        array.splice(1,0,"Hello");     // Here add first index position...
+        document.write(array);
+    </script>
+</body>
+</html>
