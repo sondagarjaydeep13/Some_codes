@@ -29,10 +29,23 @@
         // We checked rld is in start position
         var h=a.search("ipt");
         document.write(h +"<br>");
-
-        var i=a.match("Hell");
+        // Which time hello word present in string 
+        var i=a.match(/Hello/g);
         document.write(i +"<br>");
-         
+         // index check 
+         var j=a.indexOf("Java");
+         document.write(j +"<br>");
+         // last indexof for check the word last position
+         var k=a.lastIndexOf("Hello");
+         document.write(k + "<br>");
+         // replace use to replace word 
+         var l=a.replace("Hello","Hii");
+         document.write(l  +"<br>");
+
+         // trim() function to space remove
+        var m=prompt("   Enter name");
+        m.trim();
+        
          </script>
 </head>
 <body>
