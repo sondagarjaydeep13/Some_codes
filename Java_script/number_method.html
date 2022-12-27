@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number method</title>
+    <script>
+        // Number use for conver string number to number
+        var a=25;                              // String number
+        var b=Number(a);                              // use function
+        document.write(b+20+"<br>");    
+        // parseint()   and parsefloat()
+        var c=parseInt(a)           // Use function to print int value
+        document.write(c +"<br>");
+
+        var d=parseFloat(a)              // Use function to display float value
+         document.write(d +"<br>");
+
+         // isfinite()  & isinteger()
+         var e=Number.isFinite(a);
+         document.write(e +"<br>");
+
+         var f=Number.isInteger(a);
+         document.write(f +"<br>");
+
+         // tofixed() and toprecision()
+         var g=5.578;
+         var h=g.toFixed(2);     //which decimal   
+         document.write(h +"<br>");
+
+         var i=g.toPrecision(2);
+         document.write(i);     
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
