@@ -8,7 +8,7 @@ class School{
 int main()
 {
     School s1;
-    s1.Rollnumber=111;
+    s1.Rollnumber=110;
     s1.Name="Jaydeep";
     School s2;
     s2.Rollnumber=111;
