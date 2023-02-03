@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="my.js"></script>
+
+    <style>
+        .err {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 onmouseover="change()" onmouseout="rechange()">Tops technologies</h1>
+    <h1>Surat, gujarat</h1>
+
+    <hr>
+    <input type="text" id="a" onkeyup="add()">
+    <input type="text" id="b" onkeyup="add()">
+    <button id="result"></button>
+
+    <hr>
+    <form action="">
+        <input type="text" id="fname" onkeyup="validation()">
+        <span id="fnamee" class="err"></span><br><br>
+        <input type="text" id="lname" onkeyup="validation()">
+        <span id="lnamee" class="err"></span>
+        <br><br>
+        <input type="submit" id="btn">
+    </form>
+
+    <hr>
+
+    <h1 id="dt"></h1>
+    <h1 id="dt1"></h1>
+
+</body>
+
+</html>
