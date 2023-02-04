@@ -6,10 +6,13 @@
 const squre=(a,b)=>{
     b(a*a)
 }
-const cube=(c,b)=>{
-    b(c*c*c)
+const cube=(a,b)=>{
+    b(a*a*a)
 }
 squre(2,(b)=>{
     console.log(b);
-    cube())
+    cube(b,(data)=>{
+        console.log(data);
+    })
 })
+
