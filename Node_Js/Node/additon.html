@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="addition.js"></script>
+    <style>
+    
+        .box{
+            height: 150px;
+            width: 100%;
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: yellowgreen;
+            
+        }
+        .box2{
+            display: flex;
+        }
+        .heading1a{
+            text-align: center;
+            color: rgb(22, 83, 85);
+        }
+        .input1a{
+            margin-left: 5px;
+            text-align: center;
+            
+        }
+        .result{
+            width: 160px;
+            margin-left: 5px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h3 class="heading1a">Find Addition</h3>
+        <div class="box2">
+        <input class="input1a" type="text" name="" id="a" placeholder="Enter First Value " onkeyup="add()">
+        <h3 style="margin-left: 5px;">+</h3>
+        <input class="input1a" type="text" name="" id="b" placeholder="Enter Second Value" onkeyup="add()">
+        <h3 style="margin-left: 5px;">=</h3>
+        <button class="result" id="resultab" onkeyup="add()" ></button>
+        </div>
+    </div>
+</body>
+</html>
