@@ -1,24 +1,30 @@
+// now create the file using async method
 
-// Here create the file using sync
 const fs=require('fs');
-// fs.writeFileSync('core_modules/note.txt','This is new files');
+// fs.writeFile('core_modules/note1.txt','This is my note1 file',(err)=>{
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//     console.log("File is created");
+// })
 
-// now read the file 
+// Now creating folder
 
-// const read=fs.readFileSync('core_modules/note.txt','utf-8');
-// console.log(read);
+// fs.mkdir('folder',(err,folder)=>{
+//     if(err){
+//         console.log(err);
+//         return;
+//     }
+//      console.log("Folder is created");
+// })
 
-// second methode for read file
+// create file into the folder name folder using async methode
 
-// const read_second=fs.readFileSync('core_modules/note.txt');
-// console.log("Here convert into string");
-// console.log(read_second.toString());
-
-// now here add files containt without changing
-
-// fs.appendFileSync('note.txt','This is only addition');
-
-//now read append files
-
-const read=fs.readFileSync('note.txt','utf-8');
-console.log(read);
+fs.writeFile('folder/first.pdf','This is only for sample',(err)=>{
+    if(err){
+        console.log(err);
+        return;
+    }
+    console.log("first name file created");
+})
