@@ -23,4 +23,11 @@ yargs.command({
         file.taskmanager(TaskData)
     }
 })
+
+yargs.command({
+    command:"view",
+    handler:function(argv){
+        file.viewfile();  
+    }
+})
 yargs.argv
