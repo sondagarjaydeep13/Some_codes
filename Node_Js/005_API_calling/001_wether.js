@@ -4,4 +4,6 @@ const url="https://api.openweathermap.org/data/2.5/weather?lat=21.170240&lon=72.
 axios.get(url).then(result=>{
    console.log(result.data.main.temp-273);
    console.log(result.data.name);
+}).cath(err=>{
+   console.log(err)
 })
