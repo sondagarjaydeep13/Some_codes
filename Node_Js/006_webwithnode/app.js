@@ -13,6 +13,12 @@ app.get("/home",(req,resp)=>{
 // app.get("/first",(req,resp)=>{
 //     resp.sendFile(path.join(__dirname,"first.html"));
 // })
+app.get("/about",(req,resp)=>{
+    resp.sendFile(path.join(__dirname,"about.html"));
+})
+app.get("/webpage",(req,resp)=>{
+    resp.sendFile(path.join(__dirname,"webpage.html"));
+})
 
 
 app.listen(port,()=>{
