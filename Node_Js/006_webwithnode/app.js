@@ -19,6 +19,16 @@ app.get("/about",(req,resp)=>{
 app.get("/webpage",(req,resp)=>{
     resp.sendFile(path.join(__dirname,"webpage.html"));
 })
+app.get("/contact",(req,resp)=>{
+    resp.sendFile(path.join(__dirname,"contacts.html"));
+})
+// ............any other Input...............
+
+app.get("*",(req,resp)=>{
+    resp.sendFile(path.join(__dirname,"error.html"));
+})
+
+
 
 
 app.listen(port,()=>{
