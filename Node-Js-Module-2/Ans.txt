@@ -1,0 +1,54 @@
+Q-1) What is Node.js? Where can you use it ?
+
+Ans-> Node.js is an open source ,cross platform runtime environment for developing server-side
+      and networking application.
+      Node.js runs on various platforms (Windows, Linux, Unix, Mac OS X, etc.)
+
+      Node. js is widely used for the back-end of applications, like using Express. js to build the back-end of classic web applications. Also, it is used for server-side programming and non-blocking, event-driven servers like typical websites and backend API services.
+
+Q-2) Expalin callback in Node.js?
+
+Ans-> A callback is a function called when the task finishes, and a callback function allows other code to run in the meantime. Using the Callback concept, Node. js can process many requests without waiting for any function to return the result, making Node. js highly scalable.
+
+Q-3) What are the advantages of using promises instead of callback ?
+
+Ans-> 1.The control flow of asynchronous logic is more specified and structured.
+	  2.The coupling is low.
+	  3.We've built-in error handling.
+	  4.Improved readability.
+
+ 
+Q-4)  What is NPM?
+
+	-This is a packages manager used in the Node.js environment. 
+	-As a rule this software is installed on the user's PC together with other parts of Node.js.
+	-NPM stands for Node Package Manager, responsible for managing all the packages and modules for Node.js.
+
+	Node Package Manager provides two main functionalities:
+
+	1.Provides online repositories for node.js packages/modules, which are searchable on search.nodejs.org
+	2.Provides command-line utility to install Node.js packages and also manages Node.js versions and dependencies  
+     
+Q-5) What are the modules in Node.js?Explain
+
+	-Modules are like JavaScript libraries that can be used in a Node.js application to include a set of functions. 
+	To include a module in a Node.js application, use the require() function with the parentheses containing the module's name.
+
+    -Node.js has many modules to provide the basic functionality needed for a web application. Some of them include:
+
+    Core Modules Name	 	                   Description 
+    
+    fs			                    To handle the file system.
+	http	                        To make Node.js act as an HTTP server
+	https	                        To make Node.js act as an HTTPS server.
+    os	                            It provides information about the operation system.
+	path			                To handle file paths.
+	cluster		                    To split a single Node process into multiple processes.
+	dns			                    To do DNS lookups and name resolution functions.
+	tls			                    To implement TLS and SSL protocols.
+	querystring		                To handle URL query strings.
+	url			                    To parse URL strings.
+	events			                To handle events
+	timers			                To execute a function after a given number of milliseconds.
+
+   

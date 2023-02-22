@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="demo.js"></script>
+</head>
+
+
+<body onload="getCountries()" >
+
+   
+
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-8 col-lg-6 col-xl-4">
+                    <h3 class="mb-4 pb-2 fw-normal">Check the weather forecast</h3>
+
+                    <div class="input-group rounded mb-3">
+                       
+                          
+                        </a>
+                    
+                    </div>
+                    <select onchange="getStates(value)" name="country" id="country" class="form-control rounded" >
+                        <option value=" 0">---Select country---</option>
+                    </select>
+                          <br>
+                    <div onchange="getCity(value)" class="input-group rounded mb-3">
+                        <select name="state" id="state" class="form-control rounded" >
+                            <option value=" 0">---Select state---</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group rounded mb-3">
+                        <select name="city" id="city1" class="form-control rounded" >
+                            <option value=" 0">---Select city---</option>
+                        </select>
+                    </div>
+        </body>
+        </html>
