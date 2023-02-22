@@ -1,5 +1,5 @@
 const axios=require("axios");
-
+const path=require("path");
 const getWether=(city)=>{
 
 return new Promise((resolve,reject)=>{
@@ -21,4 +21,5 @@ return new Promise((resolve,reject)=>{
 
 })
 }
-getWether("Surat");
+module.exports={getWether};
+

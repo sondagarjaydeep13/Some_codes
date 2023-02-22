@@ -1,5 +1,5 @@
 const axios=require("axios");
-
+const path=require("path");
 
 
 const getTemp=(lat,lon)=>{
@@ -26,5 +26,5 @@ const getTemp=(lat,lon)=>{
 
     })
 }
+module.exports={getTemp};
 
-getTemp(21.1917761,72.9544158);
