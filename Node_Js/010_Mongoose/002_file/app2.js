@@ -90,7 +90,7 @@ const viewDetail=()=>{
 
      
 }
-viewDetail();
+// viewDetail();
 
 // insert Many User Detail
 
@@ -123,3 +123,37 @@ const inputMany=()=>{
 }
 
 // inputMany();
+// Update One Data
+
+const detailUpdate=()=>{
+    StudentDetail.update({Sname:"Chaganbhai"},{Fees:20000}).then(result=>{
+        console.log(result);
+    }).catch(err=>{
+        console.log(err);
+    })
+}
+// detailUpdate();
+
+// Update Many Data
+
+const detailupdateMany=()=>{
+     StudentDetail.updateMany({Fees:15000},{Fees:20000}).then(result=>{
+        console.log(result);
+     }).catch(err=>{
+        console.log(err);
+     })
+}
+// detailupdateMany();
+
+// now delete one data deleteOne()
+
+const detailDelete=()=>{
+    StudentDetail.deleteOne({Sname:"Chaganbhai"}).then(result=>{
+        console.log(result);
+    }).catch(err=>{
+        console.log(err);
+    })
+}
+
+// also use for delete many deleteMany({})
+detailDelete();
