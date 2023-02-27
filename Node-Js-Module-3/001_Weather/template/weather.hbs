@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <script src="./demo.js"></script>
+    <style>
+         body{
+          background-color:rgb(73, 171, 171);
+         }
+      .Heading{
+        text-align: center;
+        height: 70px;
+        width: 100%;
+        border: 2px solid #fff;
+        border-radius: 10px;
+        background-color: rgb(17, 70, 70);
+        color: red;
+        margin-top: 50px;
+
+      }
+      .first{
+        text-align: center;
+        margin-top: 20px;
+       
+        
+      }
+      .second{
+        text-align: center;
+        margin-top: 20px;
+      }
+      .third{
+        text-align: center;
+        margin-top: 20px;
+      }
+      .box1{
+        margin-top: 50px;
+        height: 200px;
+        width: 350px;
+      border: 3px solid black;
+      margin-left: 590px;
+      border-radius: 10px;
+      background-color: rgb(37, 81, 81);
+      }
+      .card{
+        background-color:  rgb(16, 77, 77);
+        color: #ffffff;
+        border: 5px solid black;
+        border-radius: 20px;
+      }
+      .mb-1{
+        color: rgb(200, 65, 65);
+      }
+    .mb-2{
+      color: rgb(57, 187, 57);
+    }
+    </style>
+
+</head>
+<body onload="getCountry()">
+  
+ 
+      <div class="Heading">
+               <h2 style="margin-top: 5px;">* Check Weather Here *</h2>
+      </div>
+      <div class="box1">
+        <div class="select first">
+        <select style="width:300px" onchange="getState(value)" name="" id="country"><option value="">-----Select Country-----</option></select>
+        </div>
+
+        <div class="select second">
+        <select style="width:300px"  onchange="getCity(value)" name="" id="state"><option value="">-------Select State------</option></select>
+       </div>
+
+
+       <div class="select third">
+        <select onchange="getWeather(value)" style="width: 300px;"  name="city" id="city1"><option value="">-------Select City-------</option></select>
+       </div>
+      </div>
+
+       
+             <!-- {{! .........for weather................. }} -->
+<div class="box2">
+ <section class="vh-100">
+  <div class="container py-5 h-100">
+
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-8 col-lg-6 col-xl-4">
+        <div class="card shadow-0 border">
+          <div class="card-body p-4">
+
+            <h3 id="wloc" class="mb-1 sfw-normal">New-York</h3> 
+            <h5 id="temp" class="mb-2"> Temperature: <strong id="wtemp">5.42°C</strong></h5>
+            <h5 class="mb-2">Pressure: <strong id="wpressure">5.42</strong></h5>
+            <h5 class="mb-2"> Humidity: <strong id="whumidity">5.42</strong></h5>
+           
+
+            <div class="d-flex flex-row align-items-center">
+             
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+</section>
+</body>
+</html>
