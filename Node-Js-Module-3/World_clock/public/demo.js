@@ -1,4 +1,3 @@
-// api stuctured
 var headers = new Headers();
 headers.append(
   "X-CSCAPI-KEY",
@@ -11,21 +10,13 @@ var requestOptions = {
   redirect: "follow",
 };
 
-// create function for getcity
+const getTime=(ccode)=>{
 
-const getcontries=()=>{
-    fetch("https://api.countrystatecity.in/v1/countries", requestOptions).then(
-        (resolve)=>{
-       return resolve.json();
-        }).then(result=>{
-            console.log(result);
-
-
-
-        }).catch(err=>{
-            console.log(err);
-        })
-       
-    
+  fetch( `https://timezone.abstractapi.com/v1/current_time/?api_key=1089efabd8e54844810c1883ba1b2b80&location=${ccode}`).then(result=>{
+    return result.json();
+  }).then(data=>{
+    clock.innerHTML=data.datetime;
+  }).catch(err=>{
+    console.log(err);
+  })
 }
-getcontries();
