@@ -107,7 +107,7 @@ const DBurl="mongodb://127.0.0.1:27017/Shopping";
     //  })
 
 
-// Q-6) Update product price for particular product. 
+// Q-6) Update product price for particular product?
     
         //    mydb.collection("Product").updateOne({ Pname:'Toy'},{$set:{ Price:10000}}).then(result=>{
         //     console.log(result);
