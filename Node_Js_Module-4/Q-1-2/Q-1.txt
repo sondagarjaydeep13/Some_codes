@@ -1,0 +1,20 @@
+Q-1) What is MongoDB?
+
+Ans->  MongoDB is a document-oriented database which stores data in JSON-like documents with dynamic schema. It means you can store your records without worrying about the data structure such as the number of fields or types of fields to store values. MongoDB documents are similar to JSON objects.
+
+Why Used?
+1) Flexibility
+2) Flexible Query Model
+3) Schema-less model
+
+Q-2) What is difference between mongo DB and SQL?
+
+Ans-> 
+ difference                MongoDB                                   SQL                 
+1) Faster                    MongoDB Faster Compare to SQL               -        
+2) Scalable                     More                                   less
+3)server supports JOIN 
+ and Global transactions      Not Connect                             connected
+
+4)Large amounts of data     accommodate                               not accommodate
+ 
