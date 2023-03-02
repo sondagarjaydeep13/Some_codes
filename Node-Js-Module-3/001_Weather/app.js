@@ -26,22 +26,13 @@ app.get("/",(req,resp)=>{
 app.get("/weather",(req,resp)=>{
     const location=req.query.location;
 
-    geocode.getGeocode(location,(err,data)=>{
-        if(err){
-            console.log(err);
-            return;
-        }
-        lat=data.lat;
-        lng=data.lng;
-
-        weather.getWeather(lat,lng,(err,data)=>{
-            if(err){
-                console.log(err);
-                return;
-            }
-            resp.send(data);
-        })
-
+    geocode.getGeocode(location).then(result=>{
+        return weather.getWeather(result.lat,result.lng);
+    }).then(data=>{
+        resp.send(data);
+    }).catch(err=>{
+        console.log(err);
     })
+    
 
 })
