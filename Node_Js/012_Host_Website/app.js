@@ -1,94 +1,71 @@
-const mongoose=require("mongoose");
-const dbURL="mongodb://127.0.0.1:27017/Amzone";
-// const database="Country";
+const { response } = require("express");
+const express=require("express");
+const app=express();
+const port=9000;
 
-mongoose.connect(dbURL).then(result=>{
-    // const mydb=client.db(database);
-    console.log("Database Connected");
+
+app.listen(port,()=>{
+    console.log("Port "+" "+port+" "+" Running");
+});
+
+// connect to database
+const mongoose=require("mongoose");
+const DBurl="mongodb://127.0.0.1:27017/Colors"
+const database="Colors";
+
+app.use(express.json());
+
+mongoose.connect(DBurl).then(result=>{
+    console.log("database Connected");
 }).catch(err=>{
     console.log(err);
 })
 
-const userSchema=new mongoose.Schema({
+const user=new mongoose.Schema({
     Name:{
-        type:String,
-    },
-    Address:{
         type:String
     },
     MobileNr:{
         type:Number
+    },
+    Address:{
+        type:String
     }
 })
+const User=new mongoose.model("User",user);
 
-const User=new mongoose.model("User",userSchema);
-
-const addUser=()=>{
-    const user=new User({
-        Name:"Magan bhai",
-        Address:"538,Mahuva,Bhavnagar",
-        MobileNr:"9632587415"
+app.post("/user",(req,resp)=>{
+   const user=new User(req.body);
+   user.save().then(result=>{
+   resp.send(result);
+   }).catch(err=>{
+    console.log(err);
+   })
+})
+app.get("/user",(req,resp)=>{
+    User.find().then(result=>{
+        resp.send(result);
+    }).catch(err=>{
+        console.log(err);
     })
+})
+
+app.get("/user/:id",(req,resp)=>{
+    const _id=req.params.id;
+   
+    User.findById(_id).then(result=>{
+        resp.send(result);
+    }).catch(err=>{
+        resp.send(err);
+    })
+})
+ 
+app.post("/user",(req,resp)=>{
+    const user=new User(req.body);
     user.save().then(result=>{
-        console.log(result);
+        resp.send(result);
     }).catch(err=>{
-        console.log(err);
+        resp.send(err);
     })
-}
-const moreUser=()=>{
-    const user1=new User({Name:"Chagan Bhai",Address:"856,Vesu,Surat",MobileNr:6589321472});
-    const user2=new User({Name:"Rajesh Bhai",Address:"586,Rajkot",MobileNr:7561234892});
+})
 
-    User.insertMany([user1,user2]).then(result=>{
-        console.log(result);
-
-    }).catch(err=>{
-        console.log(err);
-    })
-}
-// View User;
-
-const findUser=()=>{
-
-     User.find().then(result=>{
-        console.log(result);
-     }).catch(err=>{
-        console.log(err);
-     })
-}
-
-const findbyName=()=>{
-    User.find({Name:"Rajesh Bhai"}).then(result=>{
-        console.log(result);
-    }).catch(err=>{
-        console.log(err);
-    })
-}
-
-// Delete Rajesh Bhai Name Data 
-
-const deletByname=()=>{
-
-    User.deleteOne({Name:"Rajesh Bhai"}).then(result=>{
-        console.log(result);
-    }).catch(err=>{
-        console.log(err);
-    })
-}
-
-// Update One Data 
-
-const updateOne=()=>{
-    User.updateOne({Name:"Magan bhai"},{$set:{Address:"63,Varachha,Surat"}}).then(result=>{
-        console.log(result);
-    }).catch(err=>{
-        console.log(err);
-    })
-}
-
-// addUser();
-// moreUser();
-// findUser();
-// findbyName()
-// deletByname();
-updateOne();
