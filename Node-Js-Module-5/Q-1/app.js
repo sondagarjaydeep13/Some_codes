@@ -13,7 +13,8 @@ app.listen(port,()=>{
 
 // Creating database
 const mongoose=require("mongoose");
-const dburl="mongodb://127.0.0.1:27017/TaskManger";
+// MongoDB Atlas link
+const dburl="mongodb+srv://sondagarjaydeep13:Jaydeep123@cluster0.jvvwc8q.mongodb.net/Colors?retryWrites=true&w=majority";
 
 mongoose.connect(dburl).then(result=>{
     console.log("Database Connected");
