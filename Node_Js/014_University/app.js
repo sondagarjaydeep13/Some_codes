@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const port = 9000;
 const studentrouter = require("./router/student_router");
+const paymentrouter = require("./router/payment_router");
 app.use(express.json());
 const dburl =
   "mongodb+srv://sondagarjaydeep13:Jaydeep123@cluster0.jvvwc8q.mongodb.net/University?retryWrites=true&w=majority";
@@ -18,3 +19,4 @@ mongoose
     console.log(err);
   });
 app.use("/", studentrouter);
+app.use("/", paymentrouter);

@@ -17,7 +17,7 @@ const student = new mongoose.Schema({
   },
 });
 student.pre("save", async function () {
-  this.Pass = await bcrypt.hash(this.Pass);
+  this.Pass = await bcrypt.hash(this.Pass, 10);
 });
 
 const Student = new mongoose.model("Student", student);
