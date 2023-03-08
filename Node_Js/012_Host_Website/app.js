@@ -69,3 +69,20 @@ app.post("/user",(req,resp)=>{
     })
 })
 
+app.put("/user/:id",(req,resp)=>{
+ const _id=req.params.id;
+    User.findByIdAndUpdate(_id,req.body).then(result=>{
+        resp.send(result);
+    }).catch(err=>{
+        resp.send(result);
+    })
+})
+ app.delete("/user/:id",(req,resp)=>{
+    const _id=req.params.id;
+    User.findByIdAndDelete(_id).then(result=>{
+        resp.send(result);
+    }).catch(err=>{
+        resp.send(result);
+    })
+ })
+
