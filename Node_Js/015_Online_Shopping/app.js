@@ -20,4 +20,6 @@ mongoose
     console.log(err);
   });
 const userrouter = require("./router/userrouter");
+const productrouter = require("./router/productrouter");
 app.use("/", userrouter);
+app.use("/", productrouter);

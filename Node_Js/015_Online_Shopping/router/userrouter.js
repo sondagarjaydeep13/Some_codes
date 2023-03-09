@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../model/User");
 const bcrypt = require("bcryptjs");
+const auth = require("../middelware/auth");
 router.post("/users", (req, resp) => {
   const user = new User(req.body);
   user
@@ -14,7 +15,7 @@ router.post("/users", (req, resp) => {
     });
 });
 
-router.get("/users", (req, resp) => {
+router.get("/users", auth, (req, resp) => {
   User.find()
     .then((result) => {
       resp.send(result);
