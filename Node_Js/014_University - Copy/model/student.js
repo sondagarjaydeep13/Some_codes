@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcryptjs");
-const auth = require("../middelware/auth");
+
 const student = new mongoose.Schema({
   Number: {
     type: Number,

@@ -1,21 +1,25 @@
 const jwt = require("jsonwebtoken");
-const student = require("../model/student");
+const Student = require("../model/student");
 
 const auth = async (req, resp, next) => {
   const token = req.header("auth-token");
-  try {
-    const data = await jwt.verify(token, "welcome");
+  const data = await jwt.verify(token, "welcome");
+  console.log(data);
+  const studentdata = await Student.findOne({ _id: data._id });
+  console.log(studentdata);
+  // try {
+  //   const data = await jwt.verify(token, "welcome");
 
-    if (data) {
-      const studentdata = await student.findOne({ _id: data._id });
-      console.log(studentdata);
-      req.student = studentdata;
-      next();
-    } else {
-      resp.send("Invalide token");
-    }
-  } catch (error) {
-    resp.send(error);
-  }
+  //   if (data) {
+  //     const studentdata = await student.findOne({ _id:data._id });
+
+  //     req.user = studentdata;
+  //     next();
+  //   } else {
+  //     resp.send("Invalide token");
+  //   }
+  // } catch (error) {
+  //   resp.send("404 not found");
+  // }
 };
 module.exports = auth;

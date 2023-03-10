@@ -3,7 +3,7 @@ const Student = require("../model/student");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const auth = require("../middelware/auth");
-router.post("/student", auth, (req, resp) => {
+router.post("/student", (req, resp) => {
   const student = new Student(req.body);
   student
     .save()
@@ -14,7 +14,7 @@ router.post("/student", auth, (req, resp) => {
       resp.send(err);
     });
 });
-router.get("/student", auth, (req, resp) => {
+router.get("/student", (req, resp) => {
   Student.find()
     .then((result) => {
       resp.send(result);

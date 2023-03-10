@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../model/User");
 const bcrypt = require("bcryptjs");
 const auth = require("../middelware/auth");
+const jwt = require("jsonwebtoken");
 router.post("/users", (req, resp) => {
   const user = new User(req.body);
   user
@@ -31,14 +32,11 @@ router.post("/userslogin", async (req, resp) => {
     const userdata = await User.findOne({ email: email });
     const verify = await bcrypt.compare(pass, userdata.pass);
     if (verify) {
-      resp.send("Welcome" + " " + userdata.uname);
-    } else {
-      console.log("Data not found");
+      const token = await jwt.sign({ _id: userdata._id }, "thisismyfirsttoken");
+      resp.send("Token:" + "" + token);
     }
-    if (verify) {
-      resp.send("Welcome" + " " + userdata.uname);
-    } else {
-      resp.send("Invalide username and password..!!! ");
+    else{
+      resp.send("Invalide data")
     }
   } catch (error) {
     resp.send("404 Not Found..!!!");
