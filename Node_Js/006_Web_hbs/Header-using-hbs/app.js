@@ -30,8 +30,6 @@ app.listen(port,()=>{
 
 // home page
 
-
-
 app.get("/home",(req,resp)=>{
     resp.render("home");
 })
