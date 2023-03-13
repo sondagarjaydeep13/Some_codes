@@ -1,0 +1,48 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      .backhome{ color: white; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="text-center">User DataInfo</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th colspan="2">Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          {{#each udata}}
+            <tr>
+              <td>{{this.uname}}</td>
+              <td>{{this.email}}</td>
+              <td>{{this.pnumber}}</td>
+              <td><a  class="btn btn-success" href="">Edit</a></td>
+              <td><a class="btn btn-danger" href="">Delete</a></td>
+            </tr>
+          {{/each}}
+        </tbody>
+
+      </table>
+      <div>
+        <a class="backhome btn btn-success" href="/">Back To Home</a>
+      </div>
+    </div>
+  </body>
+</html>
