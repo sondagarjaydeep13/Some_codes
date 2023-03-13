@@ -22,7 +22,7 @@
       -webkit-linear-gradient( to right, rgba(132, 250, 176, 1), rgba(143, 211,
       244, 1) ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+,
       Safari 7+ */ background: linear-gradient( to right, rgba(132, 250, 176,
-      1), rgba(143, 211, 244, 1) ); } .finddata{ margin-top: 10px; } a{ color:
+      1), rgba(143, 211, 244, 1) ); } .finddata{ margin-top: 20px; } a{ color:
       #ffffff; text-decoration: none; }
     </style>
   </head>
@@ -46,12 +46,19 @@
                   </h2>
 
                   <form action="adduser" method="post">
+                    <div><input
+                        type="hidden"
+                        name="_id"
+                        id="_id"
+                        value="{{edata._id}}"
+                      /></div>
                     <div class="form-outline mb-4">
                       <input
                         type="text"
                         name="uname"
                         id="uname"
                         class="form-control form-control-lg"
+                        value="{{edata.uname}}"
                       />
                       <label class="form-label" for="uname">Your Name</label>
                     </div>
@@ -62,6 +69,7 @@
                         name="email"
                         id="email"
                         class="form-control form-control-lg"
+                        value="{{edata.email}}"
                       />
                       <label class="form-label" for="email">Your Email</label>
                     </div>
@@ -72,18 +80,20 @@
                         name="pass"
                         id="pass"
                         class="form-control form-control-lg"
+                        value="{{edata.pass}}"
                       />
                       <label class="form-label" for="pass">Password</label>
                     </div>
 
                     <div class="form-outline mb-4">
                       <input
-                        type="Number"
+                        type="text"
                         name="pnumber"
                         id="pnumber"
                         class="form-control form-control-lg"
+                        value="{{edata.pnumber}}"
                       />
-                      <label class="form-label" for="pnumber">PhoneNr
+                      <label class="form-label" for="pnumber">Phone No
                       </label>
                     </div>
 
@@ -98,7 +108,7 @@
                     <div class="finddata d-flex justify-content-center">
                       <div>
                         <a class="btn btn-info" href="infodata">
-                          Check All Data
+                          Check All User Data
                         </a>
                       </div>
 
