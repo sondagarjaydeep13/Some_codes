@@ -1,10 +1,10 @@
 const express = require("express");
 const app = express();
-const port = 9000;
+require("dotenv").config();
+const port = process.env.port;
 const mongoose = require("mongoose");
 var bodyParser = require("body-parser");
-const dburl =
-  "mongodb+srv://sondagarjaydeep13:Jaydeep123@cluster0.jvvwc8q.mongodb.net/mywebformdb?retryWrites=true&w=majority";
+const dburl = process.env.dburl;
 const hbs = require("hbs");
 const path = require("path");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -20,6 +20,8 @@ app.use("/", userrouter);
 app.listen(port, () => {
   console.log("Server running on port " + " " + port);
 });
+
 mongoose.connect(dburl).then((result) => {
   console.log("mywebformdb connected");
 });
+
