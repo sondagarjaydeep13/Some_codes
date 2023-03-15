@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const User = require("../model/user");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const auth = require("../middleware/auth");
 router.get("/", (req, resp) => {
   resp.render("registration");
 });
@@ -27,6 +29,11 @@ router.post("/loginuser", async (req, resp) => {
     const isvalide = await bcrypt.compare(pass, userdata.pass);
 
     if (isvalide) {
+      const token = await jwt.sign(
+        { _id: userdata._id },
+        "thisismyfirstwebtoken"
+      );
+      resp.cookie("jwt", token);
       resp.render("home", { msg: userdata.uname });
     } else {
       resp.render("login", { alert: "Invalide User or Passworld" });
@@ -34,5 +41,9 @@ router.post("/loginuser", async (req, resp) => {
   } catch (error) {
     resp.render("login", { alert: "Invalide User or Password" });
   }
+});
+
+router.get("/home", auth, (req, resp) => {
+  resp.render("home");
 });
 module.exports = router;

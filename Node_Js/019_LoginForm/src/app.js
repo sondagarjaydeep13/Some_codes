@@ -3,6 +3,8 @@ const app = express();
 const mongoose = require("mongoose");
 const hbs = require("hbs");
 const bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
+app.use(cookieParser());
 const port = process.env.port || 8080;
 const path = require("path");
 const viewpath = path.join(__dirname, "../templetes/view");
