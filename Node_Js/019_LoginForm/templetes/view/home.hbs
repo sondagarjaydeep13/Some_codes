@@ -4,8 +4,54 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
   </head>
   <body>
-    <h1>Welcome,{{msg}}</h1>
+    <div class="container">
+      <h2 class="text-center">User Data-Info</h2>
+
+      <span>
+        <a href="">{{udata}}</a>
+        <a class="btn btn-info" href="logout">logout</a></span>
+      <div class="box">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>UserName</th>
+              <th>Email</th>
+              <th>Join Date</th>
+              <th>Image</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each alldata}}
+              <tr>
+                <td>{{this.uname}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.JoinDate}}</td>
+                <td><img
+                    src="img/{{this.img}}"
+                    alt=""
+                    height="50px"
+                    width="50px"
+                  /></td>
+                <td><a
+                    class="btn btn-danger"
+                    href="delete?deleteid={{this._id}}"
+                  >
+                    delete
+                  </a></td>
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
   </body>
 </html>
