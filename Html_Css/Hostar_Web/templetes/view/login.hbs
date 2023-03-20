@@ -1,0 +1,109 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+          .fix {
+            width: 100%;
+            position: sticky;
+            top: 0px;
+           
+            /* border-radius: 12px; */
+        
+            display: inline-block;
+            z-index: 11;
+        }
+    </style>
+
+   
+  </head>
+  <body>
+        <div class="fix">
+        {{>navbar}}
+        </div>
+    <section class="h-100 gradient-form" style="background-color:#eee;">
+
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-110">
+          <div class="col-xl-10">
+
+            <div class="col-lg-6">
+              <div
+                style="height:550px;width:500px;border:2px solid rgb(45, 45, 55) ;border-radius:10px;margin-left:120px"
+              >
+                <div class="card-body p-md- mx-md-5">
+
+                  <div class="text-center">
+
+                    <h2
+                      style="color:rgb(25, 102, 105)"
+                      class="mt-1 mb-4 pb-1"
+                    >Hostar Login</h2>
+                  </div>
+
+                  <form action="loginuser" method="post">
+
+                    <div class="form-outline mb-4">
+                      <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="email address"
+                      />
+                      <label
+                        class="form-label"
+                        for="form2Example11"
+                      >Email</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                      <input
+                        type="password"
+                        name="pass"
+                        id="pass"
+                        class="form-control"
+                      />
+                      <label
+                        class="form-label"
+                        for="form2Example22"
+                      >Password</label>
+                    </div>
+
+                    <div class="text-center pt-1 mb-5 pb-1">
+                      <button
+                        class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
+                        type="submit"
+                      >Log in</button>
+                      <a class="text-muted" href="#!">Forgot password?</a>
+                    </div>
+
+                    <div
+                      class="d-flex align-items-center justify-content-center pb-4"
+                    >
+                      <p class="mb-0 me-2">Don't have an account?</p>
+                      <a href="/registration" class="btn btn-danger">Create Now</a>
+
+                    </div>
+
+                  </form>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </body>
+</html>
