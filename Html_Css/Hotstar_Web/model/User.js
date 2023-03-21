@@ -9,7 +9,8 @@ const userSchema = new mongoose.Schema({
     default: Date.now(),
   },
 });
-userSchema.pre("save", async function (pass) {
+
+userSchema.pre("save", async function (next) {
   this.pass = await bcrypt.hash(this.pass, 10);
 });
 const User = mongoose.model("User", userSchema);

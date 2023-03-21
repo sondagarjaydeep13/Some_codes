@@ -22,18 +22,25 @@ router.get("/tv", auth, (req, resp) => {
 });
 //**************************Add user******************** */
 router.post("/adduser", async (req, resp) => {
-  const _id = req.body._id;
+  const id = req.body._id;
 
   try {
-    if (_id == "") {
-      const user = await new User(req.body);
+    if (id == "") {
+      const user = await new User({
+        uname: req.body.uname,
+        email: req.body.email,
+        pass: req.body.pass,
+      });
       await user.save();
       resp.render("registration", {
         usermsg: "Congr,,Registration success..!!",
       });
     } else {
-      const user = await User.findByIdAndUpdate({ _id: _id }, req.body);
-      console.log(user);
+      const user = await User.findByIdAndUpdate(
+        { _id: id },
+        { uname: req.body.uname, email: req.body.email }
+      );
+
       resp.render("registration", { usermsg: "User data Update success..!!!" });
     }
   } catch (error) {
@@ -75,7 +82,10 @@ router.get("/edit", async (req, resp) => {
   const _id = req.query.editid;
   try {
     const useredit = await User.findOne({ _id: _id });
-    resp.render("registration", { editdata: useredit });
+    resp.render("registration", {
+      editdata: useredit,
+      msg: "Password not change..Here..!!",
+    });
   } catch (error) {
     resp.render(error);
   }

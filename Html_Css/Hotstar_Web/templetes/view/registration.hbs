@@ -37,7 +37,7 @@
 
                   <form action="adduser" method="post">
                     <input
-                      type="text"
+                      type="hidden"
                       name="_id"
                       id="_id"
                       value="{{editdata._id}}"
@@ -78,6 +78,7 @@
                         id="pass"
                         name="pass"
                         class="form-control"
+                        placeholder="{{msg}}"
                       />
                       <label
                         class="form-label"
