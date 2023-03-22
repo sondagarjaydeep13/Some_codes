@@ -4,8 +4,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body{
+        margin: 0px;
+
+      }
+      .fix{
+         position: sticky;
+         top: 0px;
+      }
+      .images{
+        height: 200px;
+        width: 18%;
+        margin-left: 20px;
+      }
+      .images:hover{
+       scale:1.2;
+       transition: 0.3s;
+       border: 5px solid rgb(14, 35, 35);
+       border-radius: 5px;
+      }
+      .footer{
+        margin-top: 30px;
+      }
+      .first{
+        margin-top: 20px;
+       
+      }
+      .second{
+        height: 300px;
+        width: 13%;
+        margin-left: 14px;
+        margin-top: 30px;
+      }
+      .second:hover{
+        scale: 1.2;
+        transition:0.3s;
+      }
+    </style>
   </head>
   <body>
-    <h1>Welcome</h1>
+      <div class="fix">
+   {{>navbar}}
+   </div>
+   <div class="box">
+
+    <div>
+      <h2 style="margin-left: 20px;margin-top:20px">TV Shows</h2>
+    </div>
+  
+   <div class="first"><img  style="width:25%;" height="550px" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/4248/1364248-h-04994afb88d4" alt="">
+   <img style="width:24%" height="550px" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/9414/1489414-h-1cb3d6310cff" alt="">
+   <img style="width:24%" height="550px"  src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/3568/1443568-h-486ea9769e0d" alt="">
+   <img style="width:26%" height="550px" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_m_1x/sources/r1/cms/prod/9118/1479118-h-55baf9c21b50" alt="">
+   </div>
+   </div>
+   <div>
+    <h2 style="margin-top: 20px;margin-left :20px;">Episode</h2>
+   </div>
+   <div>
+      <img class="images" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/9473/1489473-h-79c725d0467f" alt="">
+      <img class="images" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/8428/1488428-h-5b77300a042e" alt="">
+      <img class="images" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/9304/1489304-h-e864ef3bac8b" alt="">
+      <img class="images" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/8431/1488431-h-9b3ab62eb28b" alt="">
+      <img class="images" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_hs_3x/sources/r1/cms/prod/9680/1489680-h-0f211b5fba99" alt="">
+   </div>
+   <div style="margin-left: 20px;margin-top:10px"><h2>More Like This</h2></div>
+    <div>
+      <img class="second" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/7489/1487489-v-318965bd46e0" alt="">
+      <img class="second" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/6783/1086783-v-987c1faa6265" alt="">
+      <img class="second" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_1_5x/sources/r1/cms/prod/4738/664738-v" alt="">
+      <img class="second" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/2213/1042213-v-1416e8e25397" alt="">
+      <img class="second" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/7492/1487492-v-8e39618c5027" alt="">
+      <img class="second" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/2730/1122730-v-1d6aabd972c3" alt="">
+      <img class="second" src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/959/1310959-v-00800e822c4e" alt="">
+    </div>
+  
+      {{!--     
+    //************** Footer****************/ --}}
+    <div class="footer">
+    {{>footer}}
+    </div>
+     </div>
   </body>
 </html>
