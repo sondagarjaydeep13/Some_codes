@@ -6,11 +6,8 @@ const hbs = require("hbs");
 const bodyParser = require("body-parser");
 const userrouter = require("../router/userrouter");
 require("dotenv").config();
-const port = process.env.port || 9000;
-const dburl =
-  process.env.dburl ||
-  "mongodb+srv://sondagarjaydeep13:Jaydeep123@cluster0.jvvwc8q.mongodb.net/Webform?retryWrites=true&w=majority";
-
+const port = process.env.port;
+const dburl = process.env.dburl;
 app.listen(port, (req, resp) => {
   console.log("server running on port" + " " + port);
 });
@@ -23,7 +20,7 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-//.........for body parsser
+//.........for body parser
 app.use(bodyParser.urlencoded({ extended: false }));
 
 const publicpath = path.join(__dirname, "../public");

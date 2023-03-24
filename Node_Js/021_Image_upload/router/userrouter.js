@@ -33,7 +33,7 @@ router.post("/adduser", upload.single("file"), async (req, resp) => {
     resp.render(error);
   }
 });
-router.get("/home", auth, async (req, resp) => {
+router.get("/home", async (req, resp) => {
   try {
     const userdata = await User.find();
     resp.render("home", { udata: userdata });
@@ -53,8 +53,8 @@ router.post("/loginuser", async (req, resp) => {
     const token = await jwt.sign({ _id: userdata._id }, process.env.SKEY);
 
     if (verify) {
-      resp.render("home", { udata: userdata });
       resp.cookie("jwt", token);
+      resp.render("home", { udata: userdata });
     } else {
       resp.render("login", { msg: "Invalide user or password" });
     }
@@ -63,4 +63,5 @@ router.post("/loginuser", async (req, resp) => {
     resp.send("404 not found");
   }
 });
+
 module.exports = router;

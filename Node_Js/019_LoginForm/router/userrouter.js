@@ -49,10 +49,7 @@ router.post("/loginuser", async (req, resp) => {
     const alldata = await User.find();
 
     if (isvalide) {
-      const token = await jwt.sign(
-        { _id: userdata._id },
-        "thisismyfirstwebtoken"
-      );
+      const token = await jwt.sign({ _id: userdata._id }, process.env.SKEY);
       resp.cookie("jwt", token);
       resp.render("home", { udata: userdata.uname, alldata: alldata });
     } else {

@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../model/User");
 const multer = require("multer");
-const { emit } = require("nodemon");
+
 //***********Img upload********* *******/
 var storage = multer.diskStorage({
   destination: function (req, file, callback) {
@@ -36,16 +36,16 @@ router.post("/adduser", upload.single("file"), async (req, resp) => {
     resp.render(error);
   }
 });
-//***********User Login***************** */
+//****************User login************** */
 router.post("/loginuser", async (req, resp) => {
   try {
     const email = req.body.email;
     const pass = req.body.pass;
-    console.log(email);
     const userdata = await User.findOne({ email: email });
     console.log(userdata);
   } catch (error) {
     console.log(error);
   }
 });
+
 module.exports = router;

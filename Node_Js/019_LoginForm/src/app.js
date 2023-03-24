@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-const port = 8000;
-const dburl =
-  "mongodb+srv://sondagarjaydeep13:Jaydeep123@cluster0.jvvwc8q.mongodb.net/myloginform?retryWrites=true&w=majority";
+require("dotenv").config();
+const port = process.env.port;
+const dburl = process.env.dburl;
 const hbs = require("hbs");
 const bodyParser = require("body-parser");
 var cookieParser = require("cookie-parser");
