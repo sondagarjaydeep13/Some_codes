@@ -33,97 +33,97 @@
 // person.name = "Mohan";
 // console.log(data);
 
-// const MongoDB = require("mongodb");
-// const MongoClient = MongoDB.MongoClient;
-// dburl = "mongodb://127.0.0.1:27017";
-// database = "sampledata";
+const MongoDB = require("mongodb");
+const MongoClient = MongoDB.MongoClient;
+dburl = "mongodb://127.0.0.1:27017";
+database = "sampledata";
 // MongoClient.connect(dburl).then((result) => {
 //   const mydb = result.db(database);
 
-  // mydb.createCollection("Users").then((result) => {
-  //   console.log("collection created");
-  // });
-  // mydb
-  //   .collection("Users")
-  //   .insertOne({
-  //     uname: "Kamal BHai",
-  //   })
-  //   .then((result) => {
-  //     console.log(result);
-  //   });
+//   mydb.collections("Users").then((result) => {
+//     console.log("collection created");
+//   });
+// mydb
+//   .collection("Users")
+//   .insertOne({
+//     uname: "Kamal BHai",
+//   })
+//   .then((result) => {
+//     console.log(result);
+//   });
 
-  // mydb
-  //   .collection("Users")
-  //   .insertMany([
-  //     { uname: "Magan Bhai", unumber: 110, gender: "Male" },
-  //     { uname: "Krunal", unumber: 520, gender: "Male" },
-  //   ])
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
+// mydb
+//   .collection("Users")
+//   .insertMany([
+//     { uname: "Magan Bhai", unumber: 110, gender: "Male" },
+//     { uname: "Krunal", unumber: 520, gender: "Male" },
+//   ])
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
 
-  // mydb
-  //   .collection("Users")
-  //   .find()
-  //   .toArray()
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+// mydb
+//   .collection("Users")
+//   .find()
+//   .toArray()
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
-  // mydb
-  //   .collection("Users")
-  //   .updateOne(
-  //     { uname: "Magan Bhai" },
-  //     { $set: { gender: "Female" } },
-  //     { upsert: true }
-  //   )
+// mydb
+//   .collection("Users")
+//   .updateOne(
+//     { uname: "Magan Bhai" },
+//     { $set: { gender: "Female" } },
+//     { upsert: true }
+//   )
 
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
-  // mydb
-  //   .collection("Users")
-  //   .find()
-  //   .toArray()
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+// mydb
+//   .collection("Users")
+//   .find()
+//   .toArray()
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
-  // mydb
-  //   .collection("Users")
-  //   .deleteOne({ uname: "Krunal" })
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+// mydb
+//   .collection("Users")
+//   .deleteOne({ uname: "Krunal" })
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
-  // mydb
-  //   .collection("Users")
-  //   .insertMany([
-  //     { uname: "Kamal", gender: "Male", number: 10 },
-  //     { uname: "Rajesh", gender: "Male", number: 52 },
-  //   ])
-  //   .then((result) => {
-  //     console.log(result);
-  //   })
-  //   .catch((err) => {
-  //     console.log(err);
-  //   });
+// mydb
+//   .collection("Users")
+//   .insertMany([
+//     { uname: "Kamal", gender: "Male", number: 10 },
+//     { uname: "Rajesh", gender: "Male", number: 52 },
+//   ])
+//   .then((result) => {
+//     console.log(result);
+//   })
+//   .catch((err) => {
+//     console.log(err);
+//   });
 
 //   mydb
 //     .collection("Users")
@@ -135,7 +135,18 @@
 //     .catch((err) => {
 //       console.log(err);
 //     });
+
 // });
 
-//******************* Java Script****************** */
-
+//***************************** Delete collections******************** */
+MongoClient.connect(dburl).then((result) => {
+  const mydb = result.db(database);
+  mydb
+    .dropCollection("Users")
+    .then((result) => {
+      console.log("Collection deleted");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
