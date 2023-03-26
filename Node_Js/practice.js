@@ -33,10 +33,10 @@
 // person.name = "Mohan";
 // console.log(data);
 
-const MongoDB = require("mongodb");
-const MongoClient = MongoDB.MongoClient;
-dburl = "mongodb://127.0.0.1:27017";
-database = "sampledata";
+// const MongoDB = require("mongodb");
+// const MongoClient = MongoDB.MongoClient;
+// dburl = "mongodb://127.0.0.1:27017";
+// database = "sampledata";
 // MongoClient.connect(dburl).then((result) => {
 //   const mydb = result.db(database);
 
@@ -139,14 +139,21 @@ database = "sampledata";
 // });
 
 //***************************** Delete collections******************** */
-MongoClient.connect(dburl).then((result) => {
-  const mydb = result.db(database);
-  mydb
-    .dropCollection("Users")
-    .then((result) => {
-      console.log("Collection deleted");
-    })
-    .catch((err) => {
-      console.log(err);
-    });
-});
+// MongoClient.connect(dburl).then((result) => {
+//   const mydb = result.db(database);
+//   mydb
+//     .dropCollection("Users")
+//     .then((result) => {
+//       console.log("Collection deleted");
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//     });
+// });
+
+//********************************* Java Script***************************** *
+
+// const myFunction = () => {
+//   alert("Hello World");
+// };
+
