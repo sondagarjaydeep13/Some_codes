@@ -1,0 +1,61 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <style>
+      .first{ margin-top: 10px; }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <table class="table">
+        <div class="first"><a
+            class="btn btn-success"
+            href="/logout"
+          >Logout</a></div>
+        <div>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Join Date</th>
+              <th colspan="2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each udata}}
+              <tr>
+
+                <td>{{this.uname}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.date}}</td>
+
+                <td><a
+                    class="btn btn-success text-white"
+                    href="edit?editid={{this._id}}"
+                    value="Edit"
+                  >Edit </a></td>
+
+                <td><a
+                    class="btn btn-danger text-white"
+                    href="delete?deleteid={{this._id}}"
+                  >Delete</a></td>
+
+              </tr>
+            {{/each}}
+
+          </tbody>
+        </div>
+      </table>
+    </div>
+
+  </body>
+</html>
