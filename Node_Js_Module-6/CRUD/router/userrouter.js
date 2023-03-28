@@ -50,16 +50,20 @@ route.post("/loginuser", async (req, res) => {
     const userdata = await User.findOne({ email: email });
     const userdata2 = await User.find();
     const isCompare = await bcrypt.compare(pass, userdata.pass);
-    const Token = await jwt.sign({ _id: userdata._id }, process.env.SKEY);
 
     if (isCompare) {
-      res.render("view", { udata: userdata });
+      const Token = await userdata.generateToken();
+
       res.cookie("jwt", Token);
+
+      res.render("view", { udata: userdata });
     } else {
-      res.render("login", { alert: "Invalide user or password" });
+      // res.render("login", { alert: "Invalide user or password" });
+      res.render(error);
     }
   } catch (error) {
-    res.render("login", { alert: "Invalide user or password" });
+    // res.render("login", { alert: "Invalide user or password" });
+    res.render(error);
   }
 });
 //******************************** DELETE USER**************************** */
@@ -87,7 +91,12 @@ route.get("/edit", async (req, res) => {
   }
 });
 //******************************** USER LOGOUT************************** */
-route.get("/logout", (req, res) => {
+route.get("/logout", auth, (req, res) => {
+  const token = req.token;
+  const user = req.user;
+  user.Token.filter((e) => {
+    console.log(e);
+  });
   res.clearCookie("jwt");
   res.render("login");
 });
