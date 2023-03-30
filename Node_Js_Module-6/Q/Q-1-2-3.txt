@@ -1,0 +1,23 @@
+What is Middleware in Express.js?
+In Node.js, middleware refers to functions that are executed between the server receiving a request and sending a response back to the client.
+
+Middleware functions have access to the request object (req), response object (res), and the next middleware function in the application's request-response cycle.
+
+Middleware can be used to perform a variety of tasks such as logging, authentication, error handling, and more.
+
+Middleware functions are often chained together, with each function calling the next function in the chain using the next() function. This allows multiple middleware functions to be executed in a specific order.
+
+Q-2
+What is JSON web token?
+Ans:In Node.js, the jsonwebtoken package can be used to generate and verify JWTs. The package provides functions for signing and verifying tokens, as well as setting expiration times and issuing refresh tokens.
+
+package npm i jsonwe
+
+Q-3
+What is different between encryption and hashing?
+
+Encryption and hashing are both techniques used to protect data, but they serve different purposes and have different properties.
+
+Encryption is the process of transforming data into an unreadable format using a key, so that it can only be accessed by those who have the key to decrypt it. Encrypted data can be decrypted and returned to its original form by those who have the key. Encryption is used for secure communication between parties and for protecting data at rest.
+
+Hashing, on the other hand, is the process of transforming data into a fixed-length string of characters, using a one-way function. The resulting hash is unique to the original data and cannot be reversed to retrieve the original data. Hashing is used to check the integrity of data, to compare data, or to store passwords securely.
