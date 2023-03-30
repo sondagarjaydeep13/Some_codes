@@ -157,3 +157,7 @@
 //   alert("Hello World");
 // };
 
+const data = 10;
+const binary = data.toString(2);
+const result = parseInt(binary);
+console.log(result+90);
