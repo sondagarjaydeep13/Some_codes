@@ -14,15 +14,17 @@
   <body>
     <div class="container">
       <h2 class="text-center">User-login-form</h2>
-      <form action="">
+      <span class="text-danger">{{loginerror}}</span>
+
+      <form action="/loginuser" method="post">
 
         <div>
-          <input class="form-control" type="text" name="uname" id="" />
-          <label for="username">Email</label>
+          <input class="form-control" type="text" name="email" id="" />
+          <label for="email">Email</label>
         </div>
         <div>
           <input class="form-control" type="text" name="password" id="" />
-          <label for="username">Password</label>
+          <label for="password">Password</label>
         </div>
 
         <center>

@@ -16,7 +16,7 @@ app.set("view engine", "hbs");
 app.set("views", viewpath);
 hbs.registerPartials(partialpath);
 app.use(express.static(publicpath));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/", require("../router/userrouter"));
 //************************ create port************************************ */
 app.listen(port, () => {
@@ -30,7 +30,7 @@ app.listen(port, () => {
 mongoose
   .connect(dburl)
   .then((result) => {
-    console.log("31_03_database connected");
+    console.log("31_03_Update connected");
   })
   .catch((error) => {
     console.log(error);
