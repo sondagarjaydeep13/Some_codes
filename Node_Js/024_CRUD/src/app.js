@@ -6,6 +6,7 @@ const app = express();
 const path = require("path");
 const hbs = require("hbs");
 const bodyParser = require("body-parser");
+const cookieParser = require("cookie-parser");
 const port = process.env.PORT || 9000;
 const dburl = process.env.DBURL;
 //************************** path**************************************** */
@@ -18,6 +19,7 @@ hbs.registerPartials(partialpath);
 app.use(express.static(publicpath));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/", require("../router/userrouter"));
+app.use(cookieParser());
 //************************ create port************************************ */
 app.listen(port, () => {
   try {
@@ -30,7 +32,7 @@ app.listen(port, () => {
 mongoose
   .connect(dburl)
   .then((result) => {
-    console.log("31_03_Update connected");
+    console.log("31_03_Update DB connected");
   })
   .catch((error) => {
     console.log(error);

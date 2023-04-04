@@ -5,15 +5,27 @@ const auth = async (req, res, next) => {
 
   try {
     const isverify = await jwt.verify(Token, process.env.SKEY);
-    const userdata = await User.findOne({ _id: isverify.id });
+    
+    const userdata = await User.findOne({ _id: isverify._id });
+
     if (userdata) {
-      req.user = userdata;
-      next();
+      const mytoken = userdata.Tokens.find((e) => {
+        return (e.Token = Token);
+      });
+      if (mytoken == undefined) {
+        res.render("login", {
+          loginerror: "invalide token pls login first !!!",
+        });
+      } else {
+        req.user = userdata;
+        req.token = Token;
+        next();
+      }
     } else {
-      res.render("login", { loginerror: "Invalide Token,pls login first !!!" });
+      res.render("login", { loginerror: "invalide token pls login first !!!" });
     }
   } catch (error) {
-    res.render("login", { loginerror: "Invalide Token,pls login first !!!" });
+    res.render("login", { loginerror: "invalide token pls login first !!!" });
   }
 };
 

@@ -57,9 +57,20 @@ router.post("/loginuser", async (req, res) => {
     res.render(error);
   }
 });
-router.get("/userlogout", (req, res) => {
-  res.clearCookie("jwt");
-  res.redirect("/");
+router.get("/userlogout", auth, async (req, res) => {
+  try {
+    const loginuser = req.user;
+    const currentToken = req.token;
+    // console.log("data :" + loginuser.Tokens.map((e) => e.Token));
+    loginuser.Tokens = loginuser.Tokens.filter((e) => {
+      e.Token != currentToken;
+    });
+    await loginuser.save();
+    res.clearCookie("jwt");
+    res.render("login");
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 module.exports = router;

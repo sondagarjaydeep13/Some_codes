@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const validator = require("validator");
+
 const dburl = "mongodb://127.0.0.1:27017/04_04_database";
 
 mongoose
@@ -16,24 +17,26 @@ const userSchema = new mongoose.Schema({
     type: String,
     validate(value) {
       if (!validator.isAlpha(value)) {
-        throw new error("Invalide username");
+        throw new Error("Invalide username");
       }
     },
   },
 
-  Email: {
+  email: {
     type: String,
     require: true,
     validate(value) {
       if (!validator.isEmail(value)) {
-        throw new error("Invalide email");
+        throw new Error("Invalide email");
       }
     },
   },
-  Password: {
+  password: {
     type: String,
     require: true,
   },
 });
 
 const User = mongoose.model("User", userSchema);
+
+module.exports = User;

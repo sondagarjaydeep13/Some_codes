@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const User = require("../model/User");
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const auth = require("../middleware/auth");
 router.get("/", (req, res) => {
   res.render("index");
 });
@@ -12,6 +14,7 @@ router.get("/login", (req, res) => {
 router.get("/register", (req, res) => {
   res.render("register");
 });
+
 router.post("/adduser", async (req, res) => {
   try {
     const user = await User({
@@ -34,6 +37,8 @@ router.post("/loginuser", async (req, res) => {
     const userdata = await User.findOne({ email: email });
     iscompare = await bcrypt.compare(password, userdata.password);
     if (iscompare) {
+      const userToken = await jwt.sign({ _id: userdata._id }, process.env.SKEY);
+      res.cookie("jwtToken", userToken);
       res.render("views", { udata: alluser });
     } else {
       res.render("login", { loginerror: "Invalide user or password !!!" });
@@ -75,6 +80,18 @@ router.post("/updateuser", async (req, res) => {
     );
     const userdata = await User.find();
     res.render("views", { udata: userdata });
+  } catch (error) {
+    res.render(error);
+  }
+});
+router.get("/logout", (req, res) => {
+  res.clearCookie("jwtToken");
+  res.render("login");
+});
+router.get("/info", auth, async (req, res) => {
+  try {
+    // const userdata = await User.find();
+    res.render("info");
   } catch (error) {
     res.render(error);
   }

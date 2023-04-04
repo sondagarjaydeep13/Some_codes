@@ -35,12 +35,13 @@ const userSchema = new mongoose.Schema({
     }
   });
 }
-userSchema.methods.genrateToken = async function () {
+userSchema.methods.genrateToken = async function (next) {
   try {
     const token = await jwt.sign({ _id: this._id }, process.env.SKEY);
     this.Tokens = await this.Tokens.concat({ Token: token });
     await this.save();
     return token;
+    next();
   } catch (error) {
     console.log(error);
   }

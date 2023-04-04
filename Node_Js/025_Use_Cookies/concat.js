@@ -1,7 +1,4 @@
-const array = [{ Token: "Kamal" }];
+const jwt = require("jsonwebtoken");
 
-const Token = [{ Token: "Rajesh" }];
-
-array = array.concat({ Token: Token });
-
-console.log(array);
+const mytoken = jwt.sign("123" + Date.now(), "firstwebtoken");
+console.log(mytoken);
