@@ -1,0 +1,61 @@
+MYSQL -> MongoDB
+Database -> Database
+Table -> Collections
+Row -> document
+Column -> Field
+Joins : embaded, linking
+
+
+Open CMD
+--type mongo
+
+1) View all database
+show dbs
+
+switch to database or crete new database:
+use dbname
+
+check current databse : 
+db
+
+detelet database
+db.dropDatabase();
+
+2 ) View All collection
+show collections
+
+Create new collection
+db.createCollection("collection name")
+
+delete collection
+db.collectionName.drop();
+
+--
+3) Insert Row /document
+
+db.product.insert({"Name" : "TV","Price":5000,"Company":"LG"});
+db.product.insertMany([{"Name" : "TV","Price":5000,"Company":"LG"},{},{}]);
+
+view Rows : 
+db.collectionName.find()
+
+view informate
+db.collectionName.find().pretty()
+
+search data :
+db.collectionname.find(fieldname)
+
+limit :
+ db.product.find().pretty().limit(2);
+
+sort data
+desc : 
+ db.product.find().pretty().sort({"fieldName":-1});
+ace
+ db.product.find().pretty().sort({"fieldName":1});
+
+Update Data
+--if data not found the add new
+> db.product.update({"Name":"fridge"},{"Name":"fridge","Price":40000,"Company":"Blestar"},{upsert:true})
+
+Remove data

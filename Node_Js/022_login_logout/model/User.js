@@ -4,7 +4,6 @@ const userSchema = new mongoose.Schema({
   uname: String,
   email: String,
   pass: String,
-  img: String,
 });
 userSchema.pre("save", async function (pass) {
   this.pass = await bcrypt.hash(this.pass, 10);

@@ -33,7 +33,7 @@ const insertMany = () => {
     email: "magan@gmail.com",
     password: "magan@123",
   };
-  User.insertMany([{ user1 }, { user2 }])
+  User.insertMany([user1, user2])
 
     .then((result) => {
       console.log(result);
@@ -81,12 +81,21 @@ const updatebyid = () => {
     });
 };
 
-// updatebyid();
+//--------------------------------- Delete user---------------------------//
 
+const deletebyid = (id) => {
+  User.findByIdAndDelete({ _id: id })
+    .then((result) => {
+      console.log(result);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
+// deletebyid("642bff5e3910afde601f9071");
+// updatebyid();
 // userbyid("642bff5e3910afde601f9071");
 // insert();
 // insertMany();
 // finddata();
-
-//--------------------------------- Delete user---------------------------//
-

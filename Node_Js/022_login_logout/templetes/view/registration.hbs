@@ -14,7 +14,7 @@
   
   <body>
     {{>navbar}}
-        <form action="adduser" method="post" enctype="multipart/form-data">
+        <form action="adduser" method="post" >
             <div class="container">
            <div class="form-group">
             <label for="">User Name</label>
@@ -28,10 +28,10 @@
             <label for="">Password</label>
             <input  class="form-control" type="text" name="pass" id="">
            </div>
-           <div>
+           {{!-- <div>
             <label for="">Profile Picture</label>
             <input  class="form-control" type="file" name="file" id="">
-           </div>
+           </div> --}}
            <div class="btn-submit form-group">
             <button type="submit" class="btn btn-success">Submit</button>
             </div>

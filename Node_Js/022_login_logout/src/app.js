@@ -19,7 +19,7 @@ app.set("view engine", "hbs");
 app.set("views", viewpath);
 hbs.registerPartials(partialpath);
 app.use(express.static(publicpath));
-app.use("/", userrouter);
+
 app.use(bodyParser.urlencoded({ extended: false }));
 //***********Create Server port************* */
 app.listen(port, () => {
@@ -35,3 +35,4 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+app.use("/", userrouter);
