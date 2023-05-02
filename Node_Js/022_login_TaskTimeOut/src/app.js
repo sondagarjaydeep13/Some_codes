@@ -8,8 +8,10 @@ const path = require("path");
 const userrouter = require("../router/userrouter");
 const bodyParser = require("body-parser");
 //************ Uses  ***************** */
-const port = process.env.port;
-const dburl = process.env.dburl;
+const port = process.env.port || 9000;
+// const dburl = process.env.dburl;
+const dburl =
+  "mongodb+srv://sondagarjaydeep13:Jaydeep123@cluster0.jvvwc8q.mongodb.net/firstdb?retryWrites=true&w=majority";
 //************Join Path ************* */
 const viewpath = path.join(__dirname, "../templetes/view");
 const partialpath = path.join(__dirname, "../templetes/partial");

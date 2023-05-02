@@ -29,7 +29,7 @@ router.post("/adduser", async (req, resp) => {
       email: req.body.email,
       pass: req.body.pass,
     });
-    console.log(user);
+    // console.log(user);
 
     await user.save();
     resp.render("registration", { msg: "Cong,,,registration success....!!!" });
@@ -56,6 +56,14 @@ router.post("/loginuser", async (req, resp) => {
     }
   } catch (error) {
     resp.send("invalid username or password !!!");
+  }
+});
+router.get("/Alluser", async (req, res) => {
+  try {
+    const Userdata = await User.find();
+    res.send(Userdata);
+  } catch (error) {
+    res.send(error);
   }
 });
 
