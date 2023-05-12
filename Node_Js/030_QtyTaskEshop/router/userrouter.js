@@ -3,6 +3,7 @@ const router = express.Router();
 const User = require("../models/User");
 const controller = require("../controller/usercontroll");
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 router.get("/", (req, res) => {
   try {
@@ -41,6 +42,21 @@ router.get("/dropcollection", async (req, res) => {
     res.send("Collection drop success !!");
   } catch (error) {
     res.send(error);
+  }
+});
+router.post("/userlogin", async (req, res) => {
+  const { email, pass } = req.body;
+  try {
+    const userdata = await User.findOne({ email: email });
+    const isValide = await bcrypt.compare(pass, userdata.pass);
+    // console.log(isValide);
+    if (isValide == true) {
+      res.send("Welcome  " + userdata.uname);
+    } else {
+      res.send("Invalide Username Or Password !!!");
+    }
+  } catch (error) {
+    console.log(error);
   }
 });
 
