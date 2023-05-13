@@ -1,0 +1,51 @@
+body {
+  margin: 0px;
+  padding: 0px;
+}
+.container {
+  display: inline-flex;
+  margin-left: 20px;
+}
+.home {
+  /* margin-left: 50px; */
+  font-weight: 200;
+}
+.games {
+  margin-left: 40px;
+  font-weight: 200;
+}
+.navbar {
+  /* background-color: rgba(0, 0, 0, 0.784); */
+  background-color: rgb(71, 150, 150);
+  color: white;
+  font-size: medium;
+}
+.resume {
+  margin-left: 40px;
+  font-weight: 200;
+}
+.project {
+  margin-left: 40px;
+  font-weight: 200;
+}
+.contact {
+  margin-left: 40px;
+  font-weight: 200;
+}
+.profilephoto {
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+  margin-top: 2%;
+}
+.first {
+  display: block;
+  margin: auto;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-weight: 400;
+  color: rgb(71, 150, 150);
+}

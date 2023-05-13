@@ -28,7 +28,7 @@ router.post("/adduser", async (req, res) => {
       res.send("Password and confirmpass mitch match found !!!");
     } else {
       user.pass = await controller.bcryptpass(pass);
-      console.log(user.pass);
+      // console.log(user.pass);
       const userdata = await user.save();
       res.send(userdata);
     }
