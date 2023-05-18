@@ -9,28 +9,52 @@ body {
 .home {
   /* margin-left: 50px; */
   font-weight: 200;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: black;
+  text-decoration: none;
 }
-.games {
+.contact {
   margin-left: 40px;
   font-weight: 200;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: black;
+  text-decoration: none;
 }
 .navbar {
   /* background-color: rgba(0, 0, 0, 0.784); */
   background-color: rgb(71, 150, 150);
   color: white;
   font-size: medium;
+  top: 0px;
+  position: sticky;
+  display: flow-root;
 }
 .resume {
   margin-left: 40px;
   font-weight: 200;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+
+  color: black;
+  text-decoration: none;
 }
+
 .project {
   margin-left: 40px;
   font-weight: 200;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: black;
+  text-decoration: none;
 }
 .contact {
   margin-left: 40px;
   font-weight: 200;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: black;
 }
 .profilephoto {
   height: 250px;
@@ -44,8 +68,9 @@ body {
   display: block;
   margin: auto;
   text-align: center;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", */
+  /* "Lucida Sans", Arial, sans-serif; */
   font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
   color: rgb(71, 150, 150);
 }
