@@ -17,20 +17,27 @@ MongoClient.connect(dburl)
     //   .catch((error) => {
     //     console.log(error);
     //   });
+    // mydb
+    //   .collection("Student")
+    //   .insertOne({
+    //     name: "kamal",
+    //     age: 20,
+    //   })
+
+    //   .then((result) => {
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
+
     mydb
       .collection("Student")
-      .insertOne({
-        name: "kamal",
-        age: 20,
-      })
-
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((error) => {
-        console.log(error);
+      .find({ name: "kamal" })
+      .toArray()
+      .then((data) => {
+        console.log(data);
       });
-    result.save();
   })
   .catch((error) => {
     console.log(error);
